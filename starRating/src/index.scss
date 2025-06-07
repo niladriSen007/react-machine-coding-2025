@@ -1,0 +1,26 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.star {
+  &_container {
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+  }
+  &_icon {
+    font-size: 48px;
+    color: gray;
+    cursor: pointer;
+    &--hover {
+      cursor: pointer;
+      font-size: 48px;
+      color: gold;
+    }
+    &--rating {
+      cursor: pointer;
+      font-size: 48px;
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.products {
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  &_item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border: 2px solid black;
+    padding: 12px;
+    gap: 4px;
+  }
+}
+.pagination {
+  &_container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  &_item {
+    border: 2px solid black;
+    padding: 4px;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+  &_button {
+    cursor: pointer;
+    &:disabled {
+      cursor: text;
+    }
+  }
+  &--active {
+    background-color: gray;
+    color: white;
+  }
+}
