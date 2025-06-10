@@ -1,9 +1,9 @@
 import type { ChangeEvent, FormEvent } from "react";
 import type { formFieldType, FormType } from "../types";
 
-const Settings = ({ formDataValue, setformDataValue }: FormType) => {
+const Settings = ({ formDataValue, setformDataValue, errorData, setErrorData }: FormType) => {
 
-  const {theme} = formDataValue
+  const { theme } = formDataValue
 
   const settingsVal: formFieldType[] = [
     {
@@ -51,6 +51,9 @@ const Settings = ({ formDataValue, setformDataValue }: FormType) => {
             </label>
           ))
         }
+        {errorData?.theme && <span style={{
+          color: "red"
+        }}> {errorData?.theme} </span>}
         <button type="submit">Submit</button>
       </form>
     </div>)

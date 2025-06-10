@@ -1,7 +1,7 @@
 import type { ChangeEvent } from "react";
 import type { formFieldType, FormType } from "../types";
 
-const Profile = ({ formDataValue, setformDataValue }: FormType) => {
+const Profile = ({ formDataValue, setformDataValue, errorData, setErrorData }: FormType) => {
 
   const { name, age, email } = formDataValue;
 
@@ -45,7 +45,12 @@ const Profile = ({ formDataValue, setformDataValue }: FormType) => {
           formDataVal?.map((formField: formFieldType) => (
             <div className="profileTab-form__inputBox">
               <label htmlFor={formField?.name}>{formField?.label}</label>
-              <input type={formField?.type} name={formField?.name} value={formField?.value} onChange={handleChange} />
+              <div className="profileTab-form__input">
+                <input type={formField?.type} name={formField?.name} value={formField?.value} onChange={handleChange} />
+                {errorData[formField?.name] && <span style={{
+                  color: "red"
+                }}> {errorData[formField?.name]} </span>}
+              </div>
             </div>
           ))
         }

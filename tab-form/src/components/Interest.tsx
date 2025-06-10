@@ -1,7 +1,7 @@
 import type { ChangeEvent } from "react";
 import type { formFieldType, FormType } from "../types";
 
-const Interest = ({ formDataValue, setformDataValue }: FormType) => {
+const Interest = ({ formDataValue, setformDataValue, errorData, setErrorData }: FormType) => {
 
   const { hobbies } = formDataValue
 
@@ -46,6 +46,9 @@ const Interest = ({ formDataValue, setformDataValue }: FormType) => {
             </label>
           ))
         }
+        {errorData?.hobbies && <span style={{
+          color: "red"
+        }}> {errorData?.hobbies} </span>}
       </form>
     </div>)
 }
