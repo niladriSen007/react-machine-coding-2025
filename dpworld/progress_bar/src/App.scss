@@ -1,0 +1,28 @@
+.progressBar {
+  &_box {
+    border-radius: 15px;
+    border: 2px solid black;
+    height: 24px;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &_span {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  &_dynamicDiv {
+    background-color: #00c251;
+    height: 100%;
+    transition: all 700ms;
+    width: 100%;
+  }
+}

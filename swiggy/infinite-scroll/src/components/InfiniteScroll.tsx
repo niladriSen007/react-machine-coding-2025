@@ -14,18 +14,22 @@ const InfiniteScroll = () => {
   const lastElementRef = useCallback((node: HTMLSpanElement) => {
 
     if (loading) return
+    // If observer is already created, disconnect it
     if (observer?.current) (observer as {
       current: {
         disconnect: () => void
       }
     })?.current?.disconnect()
 
+    // Create a new observer
     observer.current = new IntersectionObserver((entries) => {
+      // If the last element is visible
       if (entries[0]?.isIntersecting) {
         setPage(page + 1)
       }
     })
 
+    // Observe the last element
     if (node) (observer as {
       current: {
         observe: (node: HTMLSpanElement) => void
